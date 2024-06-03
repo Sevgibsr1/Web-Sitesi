@@ -1,0 +1,460 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    font-family: "Roboto", sans-serif;
+  }
+  a {
+    text-decoration: none;
+  }
+  
+  /* Utility */
+  
+  .main-heading {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .color-light {
+    color: #fff;
+  }
+  .color-dark {
+    color: #000;
+  }
+  
+  .bg-red {
+    background: red;
+  }
+  .bg-blue {
+    background: blue;
+  }
+  .bg-green {
+    background: green;
+  }
+  
+  .container {
+    margin: 0 auto;
+    max-width: 1100px;
+  }
+  #home {
+    background: #062e51;
+  }
+  #navbar {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid grey;
+    padding: 0 10px;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #062e51;
+  }
+  
+
+  #navbar ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+  }
+  #navbar ul li a {
+    color: #fff;
+    padding: 10px;
+  }
+  #navbar ul li a:hover {
+    background: blue;
+    border-radius: 4px;
+  }
+  /* Who Part */
+
+/* ... (diğer stiller) ... */
+
+#who {
+  color: #000;
+  display: flex;
+  flex-direction: row; /* Öğeleri yatay olarak sırala */
+  align-items: center; /* Öğeleri dikeyde ortala */
+  padding: 30px;
+  gap: 20px; /* Avatar ve isim arasında boşluk bırak */
+}
+
+#who .avatar {
+  order: 1; /* Avatarı sola yerleştir */
+}
+
+#who .name {
+  order: 2; /* İsim bölümünü sağa yerleştir */
+  text-align: left; /* Yazıyı sola hizala */
+}
+
+/* ... (diğer stiller) ... */
+
+/* Media query'yi de güncelleyin */
+@media (max-width: 500px) {
+  /* ... (diğer media query stilleri) ... */
+  #who {
+    flex-direction: column; /* Küçük ekranlarda öğeleri dikey sırala */
+  }
+  #who .avatar {
+    order: 0; /* Avatarı varsayılan konumuna getir */
+  }
+  #who .name {
+    order: 1; /* İsim bölümünü varsayılan konumuna getir */
+    text-align: center; /* Yazıyı ortala */
+  }
+}
+
+
+  
+  #who .avatar img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 100%;
+  }
+  
+  #who .name h2 {
+    margin-bottom: 30px;
+  }
+  #who .name a {
+    display: inline-block;
+    color: #fff;
+    margin-top: 20px;
+    background: #007bff;
+    padding: 10px 50px;
+    border-radius: 5px;
+  }
+  #who .name p {
+    opacity: 0.6;
+    font-style: italic;
+  }
+  #who .name a:hover {
+    color: #007bff;
+    background: #fff;
+    border: 0.5px solid #000bff;
+  }
+ 
+
+
+
+  #who .about-me {
+    flex: 1;           /* Diğer öğelerle eşit genişlikte olmasını sağlar */
+    background-color: #3994e3; /* Açık gri arka plan rengi */
+    padding: 30px;      /* İçeriğin kenarlardan uzaklığı */
+    border-radius: 5px;  /* Köşeleri yumuşatır */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hafif bir gölge efekti ekler */
+    order: 3; /* Sağa hizalama için */
+    margin-left: 20px ;
+    flex: 0 0 700px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+   
+  }
+  
+  #who .about-me h3 {
+    margin-bottom: 10px; /* Başlık ile paragraf arasına boşluk ekler */
+  }
+  
+  /* Responsive tasarım için (isteğe bağlı) */
+  @media (max-width: 768px) { 
+    #who .about-me {
+      order: 2; /* Küçük ekranlarda "Hakkımda" bölümünü en alta alır */
+    }
+  }
+  
+
+ 
+
+  .about-items {
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Öğeler arasında boşluk bırakır */
+    padding: 20px;
+    
+  }
+
+  #about .about-items .item {
+    background: #fff;
+    height: auto;
+    flex: 1;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    
+  }
+  
+  #courses {
+    padding: 20px;
+    border-bottom: 1px solid black;
+  }
+  #courses .courses-section {
+    background: #fff;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  #courses .courses-section .course-item {
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .course-image {
+    position: relative;
+    margin-right: 10px;
+  }
+  .course-image img {
+    max-width: 100%;
+    min-width: 200px;
+  }
+  .course-image span {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 10px;
+  }
+  .course-info .title {
+    letter-spacing: 1.2px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  .course-info .description {
+    opacity: 0.6;
+    letter-spacing: 1.2px;
+    margin-bottom: 5px;
+  }
+  .course-info .instructor {
+    opacity: 0.6;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    display: block;
+  }
+  .course-info .rating {
+    opacity: 0.6;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+  
+  #contact {
+    display: flex;
+    color: white;
+    text-align: center;
+    padding: 20px; /* Bu satırı ekledim */
+    border-top: 1px solid black; /* Bu satırı ekledim */
+  }
+  
+  #contact .contact-form,
+  #contact .contact-social {
+    flex: 1;
+    display: flex; /* Bu satırı ekledim */
+    align-items: center; /* Bu satırı ekledim */
+    justify-content: center; /* Bu satırı ekledim */
+    flex-direction: column; /* Bu satırı ekledim */
+  }
+
+  #contact .contact-icons {
+    display: none; /* İlk olarak ikonları gizleyelim */
+    position: absolute; /* Diğer içeriğin üzerine çıkarmak için */
+    background-color: #062e51; /* Menü arkaplan rengi */
+    width: 110px; /* İçeriğin genişliğine göre ayarla */
+    padding: 20px 0; /* Menü içeriğinin yukarıdan ve alttan boşluğu */
+    left: 96%; /* Menüyü yatayda ortala */
+    transform: translateX(-50%) translateY(10%); /* Yatayda ortala */
+    z-index: 1; /* Diğer içeriğin üzerine gelecek şekilde sırala */
+    transition: all 0.3s ease; /* Geçiş efekti */
+    opacity: 0; /* İlk başta menüyü gizle */
+    pointer-events: none; /* Menüyü tıklanabilir olmaktan çıkar */
+}
+
+#contact:hover .contact-icons {
+    display: flex; /* İletişim bölümüne gelindiğinde ikonları göster */
+    flex-direction: column; /* İkonları dikey olarak sırala */
+    opacity: 1; /* Menüyü görünür yap */
+    pointer-events: auto; /* Menüyü tıklanabilir yap */
+}
+
+#contact .contact-icon {
+    margin: 10px 0; /* İkonlar arasında boşluk bırak */
+    transition: transform 0.3s;
+}
+
+#contact .contact-icon:hover {
+    transform: scale(1.2);
+}
+  
+  #contact .contact-form {
+    background: #062e51;
+  }
+  
+  @media (max-width: 500px) {
+    #about .about-items {
+      flex-direction: column;
+    }
+    #navbar {
+      flex-direction: column;
+      justify-content: center;
+    }
+    #navbar h1 {
+      margin-bottom: 0.5rem;
+    }
+  }
+  .center{
+    display: flex;
+    align-items: center;
+  }
+  
+  /* ... (diğer stiller) ... */
+
+/* ... (diğer stiller) ... */
+
+
+footer {
+  background-color: #062e51; /* Koyu mavi arka plan */
+  color: white;
+  padding: 20px 0;
+}
+
+footer .container {
+  display: flex;
+  justify-content: flex-start; /* Öğeleri sola yasla */
+  align-items: flex-start; /* Öğeleri dikey olarak da sola yasla */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+footer .footer-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  align-items: start;
+}
+
+footer .footer-form label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+footer input[type="text"],
+footer input[type="email"],
+footer textarea {
+  width: 100%;
+  max-width: 250px;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+footer textarea {
+  height: 80px;
+  resize: vertical;
+}
+
+footer button[type="submit"] {
+  background-color: #007bff; /* Mavi buton */
+  color: white;
+  padding: 10px 50px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+footer .footer-info {
+  text-align: left; /* Bilgi kısmını sola yasla */
+}
+
+footer .social-icons a {
+  color: white;
+  margin: 0 10px;
+  font-size: 1.5rem;
+}
+
+
+
+
+.slider-container {
+  width: 40%;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  margin-left: 20px;
+}
+
+
+
+.slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0; /* Başlangıçta slaytları gizle */
+  transition: opacity 1s ease-in-out; /* Geçiş efekti */
+}
+
+.slide.fade {
+  opacity: 1; /* Aktif slaytı göster */
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Resimleri slayt boyutuna sığdır */
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%); /* Başlangıçta öğeyi ekranın dışında tut */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0); /* Öğeyi orijinal konumuna getir */
+    opacity: 1;
+  }
+}
+
+
+
+
+
+.about-me {
+  position: relative; /* Bulanıklık efektini bu öğenin içinde tutmak için */
+  z-index: 1; /* Diğer öğelerin üzerinde kalmasını sağlayın */
+  transition: transform 0.3s ease; /* Büyüme animasyonu için */
+}
+
+.about-me::before { /* Bulanıklık efektini oluşturan pseudo-element */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* Beyaz, yarı saydam bir arka plan */
+  filter: blur(5px);
+  z-index: -1; /* .about-me içeriğinin altında kalmasını sağlayın */
+  opacity: 0; /* Başlangıçta gizli */
+  transition: opacity 0.3s ease; /* Geçiş efekti ekleyin */
+}
+
+.about-me:hover {
+  transform: scale(1.2); /* Fare üzerine gelindiğinde büyüt */
+}
+
+.about-me:hover::before {
+  opacity: 1; /* Fare üzerine gelindiğinde bulanıklığı göster */
+}
+

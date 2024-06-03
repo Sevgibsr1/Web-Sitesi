@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mustafa Murat Coşkun | BackEnd Developer , Intructor</title>
+    <meta name="keywords" content="Python, Java, Web Geliştirme">
+    <meta name="description" content="Programlama Eğitimleri">
+    <meta name="author" content="Mustafa Murat Coşkun">
+
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="script.js" defer></script>
+
+
+  </head>
+
+  <body cz-shortcut-listen="true">
+
+
+
+    <style>
+
+      body{
+        background-color: azure;
+      }
+
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 sütunlu grid oluştur */
+        gap: 20px; /* Öğeler arası boşluk */
+      }
+      
+      .product-item {
+        text-align: center;
+        font-size: 10px;
+      }
+      
+      .product-item img {
+        width: 160px;
+        height: 115px;
+        border-radius: 10px;
+      }
+      
+      .product-item h3 {
+        margin: 10px 0;
+      }
+      
+      .product-item button {
+        background-color: #007bff; /* Mavi buton rengi */
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        cursor: pointer;
+      }
+      
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 sütunlu grid */
+        gap: 20px;
+        max-width: 1200px; /* Maksimum genişlik belirleyin (isteğe bağlı) */
+        margin: 0 auto; /* Sayfada ortala */
+      }
+
+     
+
+#navbar ul {
+    list-style-type: none;
+    display: flex;
+    /*align-items: center; /* Butonları dikey olarak ortala */
+}
+
+#navbar ul li a, /* Linklerin stillerini ayarla */
+#navbar ul li button { /* Butonun stillerini ayarla */
+    color: #fff;
+    padding: 10px;
+    border: none; /* Butonun varsayılan kenarlığını kaldır */
+    background: none; /* Butonun varsayılan arka planını kaldır */
+    cursor: pointer; /* İmleci işaretçiye dönüştür */
+    font-size: inherit; /* Font boyutunu diğer öğelerle aynı yap */
+}
+
+#navbar ul li a:hover, /* Linklerin hover stillerini ayarla */
+#navbar ul li button:hover { /* Butonun hover stillerini ayarla */
+    background: blue;
+    border-radius: 4px;
+}
+
+
+
+
+#cart-preview {
+  display: none; /* Başlangıçta gizli */
+  position: absolute;
+  top: 100%; /* Butonun altında */
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+#cart-items-preview li {
+  margin-bottom: 5px; /* Alt kenar boşluğu ekle */
+}
+
+
+
+
+#cart-items-preview {
+  display: flex; /* Esnek düzen kullan */
+  flex-direction: column; /* Öğeleri dikey sırala */
+}
+
+
+#cart-preview {
+  display: none; /* Başlangıçta gizli */
+  position: absolute;
+  top: 100%; /* Butonun altında */
+  right: 0;
+  background-color: #062e51;
+  border: 1px solid #ccc;
+  padding: 10px;
+  max-height: 200px; /* Maksimum yükseklik belirleyin (isteğe bağlı) */
+  overflow-y: auto; /* Taşan içeriği kaydırma çubuğuyla göster */
+}
+
+#cart-items-preview {
+  display: flex; /* Esnek düzen kullan */
+  flex-direction: column; /* Öğeleri dikey sırala */
+  align-items: flex-start !important;
+}
+
+#cart-items-preview li {
+  margin-bottom: 5px; /* Alt kenar boşluğu ekle */
+  list-style: none;
+  align-items: center;
+  display: flex;
+}
+
+
+
+      
+        </style>
+
+
+
+    
+      <div class="container">
+        
+        <nav id="navbar">
+          <h1 style="font-size: 1rem" class="logo">Başar Eğitim Kurumları</h1>
+
+          <ul>
+            
+            <li><a href="index.html" data-page="home">Ana Sayfa</a></li>
+            <li><a href="kurslar.html"  data-page="course">Kurslar</a></li>
+            <li><a href="login.html"  data-page="login">Giriş Yap</a></li>
+
+
+
+            
+            
+            <li>
+              <button id="cart-button">
+                  <i class="fas fa-shopping-cart"></i> Sepet (<span id="cart-count">0</span>)
+              </button>
+              <div id="cart-preview"> 
+                  <ul id="cart-items-preview"></ul>
+              </div>
+          </li>
+          
+        
+            
+
+
+            <li> 
+              <section id="contact">
+              <h2>İletişim</h2>
+              <div class="contact-icons">
+                <a href="https://x.com/SevgiBaar19/" target="_blank" class="contact-icon">
+                    <i class="bi bi-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" class="contact-icon">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/sevgi-ba%C5%9Far-172757221/" target="_blank" class="contact-icon">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+            </div>
+            
+          </section></li>
+          </ul>
+        </nav>
+      </div>
+   
+
+     <br>
+     <br>
+
+
+      <div class="product-grid">
+        <div class="product-item">
+          <img src="java 1.jpg" alt="Ürün 1">
+          <h3>JAVA EĞİTİMİ</h3>
+          <button>Satın Al</button>
+        </div>
+        <div class="product-item">
+          <img src="c++ 1.png" alt="Ürün 2">
+          <h3>C++ EĞİTİMİ</h3>
+          <button>Satın Al</button>
+        </div>
+        <div class="product-item">
+          <img src="c_yeni-1.jpg" alt="Ürün 3">
+          <h3>C# EĞİTİMİ</h3>
+          <button>Satın Al</button>
+        </div>
+        
+        <div class="product-item">
+          <img src="c_-gorsel-yenii-1.jpg" alt="Ürün 4">
+          <h3>C# İLE GÖRSEL PROGRAMLAMA</h3>
+          <button>Satın Al</button>
+        </div>
+        <div class="product-item">
+          <img src="python 1.jpg" alt="Ürün 5">
+          <h3>PYTHON EĞİTİMİ</h3>
+          <button>Satın Al</button>
+        </div>
+        <div class="product-item">
+          <img src="sql 2.jpeg" alt="Ürün 6">
+          <h3>SQL EĞİTİMİ</h3>
+          <button>Satın Al</button>
+        </div>
+        <div class="product-item">
+          <img src="unity 2.png" alt="Ürün 7">
+          <h3>UNİTY EĞİTİMİ</h3>
+          <button>Satın Al</button>
+        </div>
+        <div class="product-item">
+          <img src="unity oyun 2.jpeg" alt="Ürün 8">
+          <h3>UNİTY İLE OYUN ÖRNEĞİ</h3>
+          <button>Satın Al</button>
+        </div>
+        <div class="product-item">
+          <img src="gomulu 1.png" alt="Ürün 9">
+          <h3>GÖMÜLÜ SİSTEMLER EĞİTİMİ</h3>
+          <button>Satın Al</button>
+        </div>
+        <div class="product-item">
+          <img src="html_css.png" alt="Ürün 10">
+          <h3>HTML5 CSS EĞİTİMLERİ</h3>
+          <button>Satın Al</button>
+        </div>
+        <div class="product-item">
+          <img src="html_css js 2.png" alt="Ürün 11">
+          <h3>HTML CSS VE JS İLE WEB SİTESİ YAPIMI</h3>
+          <button>Satın Al</button>
+        </div>
+        <div class="product-item">
+          <img src="react 2.png" alt="Ürün 12">
+          <h3>REACT EĞİTİMİ</h3>
+          <button>Satın Al</button>
+        </div>
+        <div class="product-item">
+          <img src="pascal 1.png" alt="Ürün 13">
+          <h3>PASCAL EĞİTİMİ</h3>
+          <button>Satın Al</button>
+        </div>
+        <div class="product-item">
+          <img src="swift 2.png" alt="Ürün 14">
+          <h3>SWİFT EĞİTİMİ</h3>
+          <button>Satın Al</button>
+        </div>
+        <div class="product-item">
+          <img src="php 1.png" alt="Ürün 15">
+          <h3>PHP EĞİTİMİ</h3>
+          <button>Satın Al</button>
+        </div>
+        <div class="product-item">
+          <img src="c-prog.jpg" alt="Ürün 16">
+          <h3>C EĞİTMİ</h3>
+          <button>Satın Al</button>
+        </div>
+      </div>
+      
+
+
+
+
+
+
+<br>
+<br>
+
+
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-form">
+            <form action="#" method="post">
+              <label for="name">Ad Soyad</label>
+              <input type="text" id="name" name="name" placeholder="Ad Soyad" required>
+    
+              <label for="email">E-posta</label>
+              <input type="email" id="email" name="email" placeholder="E-posta" required>
+    
+              <label for="message">Mesajınız</label>
+              <textarea id="message" name="message" placeholder="Mesajınız"></textarea>
+    
+              <button type="submit">Gönder</button>
+            </form>
+          </div>
+    <br>
+          <div class="footer-info">
+            <p>&copy; 2024 Başar Eğitim Kurumları | Tüm Hakları Saklıdır.</p>
+          </div>
+        </div> 
+      </div>
+    </footer>
+    
+    
+
+
+                    
+   
+
+</body>
+
+
+
+
+<script>
+
+
+  // Kurslar butonunu seçin
+const kurslarBtn = document.querySelector('a[data-page="course"]');
+
+// Butona tıklama olayını dinleyin
+kurslarBtn.addEventListener("click", function (event) {
+    // Eğer zaten kurslar sayfasındaysanız
+    if (window.location.pathname.endsWith('/kurslar.html')) { 
+        event.preventDefault(); // Varsayılan link davranışını engelle
+
+        // Uyarı mesajını göster
+        alert("Zaten kurslar sayfasındasınız!");
+    }
+});
+
+
+
+
+
+
+
+
+
+// Sepet verilerini saklamak için bir dizi
+let cart = [];
+
+// Tüm "Satın Al" butonlarını seç
+const buyButtons = document.querySelectorAll('.product-item button');
+
+// Sepet butonu ve önizleme öğelerini seç
+const cartButton = document.getElementById('cart-button');
+const cartPreview = document.getElementById('cart-preview');
+const cartItemsPreview = document.getElementById('cart-items-preview');
+
+
+
+// Sepet sayısını güncelleme fonksiyonu
+function updateCartCount() {
+  const cartCount = document.getElementById('cart-count');
+  cartCount.textContent = cart.length;
+}
+
+// Sepet önizlemesini güncelleme fonksiyonu
+function updateCartPreview() {
+  cartItemsPreview.innerHTML = ''; // Önceki öğeleri temizle
+
+  cart.forEach(product => {
+    const listItem = document.createElement('li');
+    listItem.innerHTML = `
+      <img src="${product.image}" width="100" alt="${product.title}">
+      <span>${product.title}</span>
+    `;
+    cartItemsPreview.appendChild(listItem);
+  });
+}
+
+const anaSayfaBtn = document.querySelector('a[data-page="home"]');
+
+anaSayfaBtn.addEventListener('click', function(event) {
+  // Butonun varsayılan tıklama davranışını engelle
+  event.preventDefault();
+  
+  // Yönlendirme kodunu buraya ekleyin, örneğin:
+   window.location.href = "index.html"; // Ana sayfanın URL'si
+  
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ... (diğer değişkenler ve fonksiyonlar) ...
+
+// Sepet önizlemesinin açık/kapalı durumunu tutan değişken
+let isCartPreviewOpen = false;
+
+// Sepet butonuna tıklama olayı dinleyicisi ekle
+cartButton.addEventListener('click', () => {
+  isCartPreviewOpen = !isCartPreviewOpen; // Durumu tersine çevir
+
+  if (isCartPreviewOpen) {
+    cartPreview.style.display = 'block'; // Sepeti göster
+  } else {
+    cartPreview.style.display = 'none';  // Sepeti gizle
+  }
+});
+
+// Sepet önizlemesine tıklandığında kapanmaması için olay ekle (burada değişiklik yok)
+cartPreview.addEventListener('click', (event) => {
+  event.stopPropagation(); // Olayın yukarıya yayılmasını engelle 
+});
+
+// Mouseenter ve mouseleave olaylarını kaldırıyoruz (burada değişiklik yok)
+cartButton.removeEventListener('mouseenter', () => {
+  cartPreview.style.display = 'block'; 
+});
+cartButton.removeEventListener('mouseleave', () => {
+  cartPreview.style.display = 'none'; 
+});
+
+// ... (diğer kodlar) ...
+
+
+
+
+
+
+// Her bir butona tıklama olayı dinleyicisi ekle
+buyButtons.forEach(button => {
+    let purchased = false; // Butona özgü satın alma durumunu takip etmek için değişken
+    button.addEventListener('click', (event) => {
+        const productItem = event.target.parentElement;
+        const productTitle = productItem.querySelector('h3').textContent;
+
+        if (purchased) {
+            alert("Bu ürünü zaten satın aldınız!");
+            return; // Fonksiyondan çık, ürünü sepete ekleme
+        } else {
+            addToCart(event); // addToCart fonksiyonunu çağırarak ürünü sepete ekle
+            purchased = true; // Ürünün satın alındığını işaretle
+            button.disabled = true; // Butonu devre dışı bırak
+            button.textContent = "Sepete Eklendi"; // Butonun metnini değiştir
+        }
+    });
+});
+
+// Sepete ekleme fonksiyonu
+function addToCart(event) {
+    const productItem = event.target.parentElement;
+    const product = {
+        image: productItem.querySelector('img').src,
+        title: productItem.querySelector('h3').textContent,
+    };
+
+    cart.push(product);
+    updateCartCount();
+    updateCartPreview();
+}
+
+// ... (diğer kodlar) ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</html>
+
+
+
+
+
+

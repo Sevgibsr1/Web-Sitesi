@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş ve Kayıt</title>
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+<body>
+    <div class="wrapper">
+        <form action="" id="loginForm">
+            <h1>Giriş Yap</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Kullanıcı Adı" class="login-input" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Şifre" class="login-input" id="passwordInput" required>
+                <i class='bi bi-eye-slash' id="togglePassword"></i>  
+            </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox"> Beni Hatırla</label>
+            </div>
+<br>
+            <div class="enter-link">
+                <a href="index.html">
+                <button type="button" class="enter-button">Giriş Yap</button>
+            </a>
+            </div>
+            <br>
+            <div class="register-link">
+                <p>Hesabınız yok mu?</p>
+                <button type="button" class="register-button">Kayıt Ol</button>
+            </div>
+        </form>
+
+        <div id="registerForm" style="display: none;">
+            <form action="">
+                <h1>Kayıt Ol</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Kullanıcı Adı" class="register-input" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="E-posta" class="register-input" required>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Şifre" id="registerPasswordInput" class="register-input" required>
+                    <i class='bx bxs-hide' id="toggleRegisterPassword"></i>
+                </div>
+
+                <div class="record-link">
+                    <a href="index.html">
+                    <button type="button" class="record-button">Kayıt Ol</button>
+                </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('gunumuzun_populer_programlama_dilleri-1024x540.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.login-input, .register-input {
+    padding-left: 1em;
+}
+
+.wrapper {
+    width: 500px;
+    height: 550px;
+    color: #fff;
+    backdrop-filter: blur(20px);
+    padding: 40px 40px;
+    box-shadow: 0px 0px 20px white;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10%;
+}
+
+.wrapper h1 {
+    font-size: 42px;
+    text-align: center;
+}
+
+.wrapper .input-box {
+    position: relative;
+    width: 80%;
+    height: 60px;
+    margin: 40px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .4);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding-right: 35px; 
+}
+
+.input-box input::placeholder {
+    color: #fff;
+}
+
+.input-box i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 25px;
+}
+
+.wrapper .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-size: large;
+}
+
+.remember-forgot label input {
+    accent-color: #fff;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.wrapper .enter-button, .record-button {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.wrapper .register-link {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
+
+.register-button {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 550;
+}
+
+.register-button:hover {
+    background-color: #45a049;
+}
+
+#togglePassword, #toggleRegisterPassword {
+    cursor: pointer; 
+}
+
+
+    </style>
+<style>
+    .enter-button:disabled,
+    .record-button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+</style>
+
+    <script>
+        const passwordInput = document.getElementById('passwordInput');
+        const togglePassword = document.getElementById('togglePassword');
+        const registerButton = document.querySelector('.register-button');
+        const registerForm = document.getElementById('registerForm');
+        const loginForm = document.getElementById('loginForm');
+        const registerPasswordInput = document.getElementById('registerPasswordInput');
+        const toggleRegisterPassword = document.getElementById('toggleRegisterPassword');
+
+        // Giriş formunun göz ikonu işlevi
+        togglePassword.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            togglePassword.classList.toggle('bxs-hide');
+            togglePassword.classList.toggle('bxs-show');
+        });
+
+        // Kayıt formunun göz ikonu işlevi
+        toggleRegisterPassword.addEventListener('click', function() {
+            const type = registerPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            registerPasswordInput.setAttribute('type', type);
+            toggleRegisterPassword.classList.toggle('bxs-hide');
+            toggleRegisterPassword.classList.toggle('bxs-show');
+        });
+
+        registerButton.addEventListener('click', function() {
+            loginForm.style.display = 'none';
+            registerForm.style.display = 'block';
+        });
+
+        const registerInputs = document.querySelectorAll('#registerForm .register-input');
+        const recordButton = document.querySelector('.record-button');
+
+        // Kayıt formundaki input alanlarının değişimini izleyin
+        registerInputs.forEach(input => {
+            input.addEventListener('input', checkRegisterForm);
+        });
+
+        function checkRegisterForm() {
+            let allFilled = true;
+            registerInputs.forEach(input => {
+                if (input.value.trim() === '') {
+                    allFilled = false;
+                }
+            });
+            recordButton.disabled = !allFilled;
+        }
+
+        // Sayfa yüklendiğinde ilk kontrolü yapın
+        checkRegisterForm();
+
+        const loginButton = document.querySelector('.enter-button');
+        const loginInputs = document.querySelectorAll('#loginForm .login-input');
+    
+        // Giriş formundaki input alanlarının değişimini izleyin
+        loginInputs.forEach(input => {
+            input.addEventListener('input', checkLoginForm);
+        });
+    
+        function checkLoginForm() {
+            let allFilled = true;
+            loginInputs.forEach(input => {
+                if (input.value.trim() === '') {
+                    allFilled = false;
+                }
+            });
+            loginButton.disabled = !allFilled;
+        }
+    
+        // Sayfa yüklendiğinde ilk kontrolü yapın
+        checkLoginForm();
+    </script>
+    
+</body>
+</html>
